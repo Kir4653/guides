@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Гайд — Артефактное Оружие</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: radial-gradient(circle at top, #1b1b1b, #0d0d0d 70%);
+      color: white;
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .background {
+      position: fixed;
+      inset: 0;
+      background-image: radial-gradient(rgba(255,255,255,0.04) 2px, transparent 2px);
+      background-size: 40px 40px;
+      opacity: 0.25;
+      z-index: -2;
+    }
+
+    .glow {
+      position: fixed;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(255,0,0,0.15), transparent 70%);
+      filter: blur(40px);
+      top: -150px;
+      right: -150px;
+      z-index: -1;
+    }
+
+    header {
+      padding: 40px 20px 20px;
+      text-align: center;
+      border-bottom: 2px solid rgba(255,255,255,0.08);
+      backdrop-filter: blur(10px);
+    }
+
+    header h1 {
+      font-family: 'Press Start 2P', cursive;
+      font-size: 28px;
+      line-height: 1.6;
+      color: #ff4b4b;
+      text-shadow: 0 0 12px rgba(255, 75, 75, 0.7);
+    }
+
+    header p {
+      margin-top: 18px;
+      color: #bcbcbc;
+      font-size: 15px;
+    }
+
+    .layout {
+      display: flex;
+      min-height: calc(100vh - 180px);
+    }
+
+    .sidebar {
+      width: 260px;
+      background: rgba(20,20,20,0.9);
+      border-right: 1px solid rgba(255,255,255,0.08);
+      padding: 30px 18px;
+      backdrop-filter: blur(12px);
+    }
+
+    .sidebar h2 {
+      font-size: 13px;
+      letter-spacing: 2px;
+      color: #777;
+      margin-bottom: 18px;
+      text-transform: uppercase;
+    }
+
+    .tab-button {
+      width: 100%;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: white;
+      padding: 16px;
+      border-radius: 14px;
+      margin-bottom: 12px;
+      cursor: pointer;
+      transition: 0.25s ease;
+      text-align: left;
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .tab-button:hover,
+    .tab-button.active {
+      background: linear-gradient(135deg, rgba(255,70,70,0.25), rgba(255,255,255,0.08));
+      border-color: rgba(255,70,70,0.4);
+      transform: translateX(4px);
+      box-shadow: 0 0 20px rgba(255,70,70,0.15);
+    }
+
+    .content {
+      flex: 1;
+      padding: 40px;
+    }
+
+    .tab-content {
+      display: none;
+      animation: fade 0.4s ease;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    @keyframes fade {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .hero {
+      display: flex;
+      gap: 40px;
+      align-items: center;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+    }
+
+    .hero img {
+      width: 260px;
+      image-rendering: pixelated;
+      border-radius: 18px;
+      border: 2px solid rgba(255,255,255,0.08);
+      box-shadow: 0 0 30px rgba(255,0,0,0.2);
+    }
+
+    .hero-text {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .hero-text h2 {
+      font-size: 34px;
+      margin-bottom: 18px;
+      color: #ff5a5a;
+    }
+
+    .hero-text p {
+      line-height: 1.8;
+      color: #d6d6d6;
+      font-size: 16px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 22px;
+      padding: 28px;
+      margin-bottom: 28px;
+      box-shadow: 0 0 25px rgba(0,0,0,0.35);
+      backdrop-filter: blur(10px);
+    }
+
+    .card h3 {
+      color: #ff5a5a;
+      margin-bottom: 16px;
+      font-size: 24px;
+    }
+
+    .card p {
+      color: #d2d2d2;
+      line-height: 1.9;
+      font-size: 16px;
+    }
+
+    .craft-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 28px;
+      margin-top: 28px;
+    }
+
+    .craft-box {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 18px;
+      padding: 22px;
+      text-align: center;
+      transition: 0.3s ease;
+    }
+
+    .craft-box:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 0 20px rgba(255,70,70,0.15);
+    }
+
+    .craft-box img {
+      width: 100%;
+      max-width: 340px;
+      image-rendering: pixelated;
+      margin-bottom: 18px;
+      border-radius: 12px;
+    }
+
+    .craft-box h4 {
+      font-size: 18px;
+      margin-bottom: 12px;
+      color: white;
+    }
+
+    .craft-box p {
+      color: #cfcfcf;
+      line-height: 1.7;
+      font-size: 15px;
+    }
+
+    footer {
+      padding: 30px;
+      text-align: center;
+      color: #7e7e7e;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      margin-top: 40px;
+    }
+
+    @media (max-width: 900px) {
+      .layout {
+        flex-direction: column;
+      }
+
+      .sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+      }
+
+      .content {
+        padding: 24px;
+      }
+
+      header h1 {
+        font-size: 20px;
+      }
+
+      .hero {
+        justify-content: center;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="background"></div>
+  <div class="glow"></div>
+
+  <header>
+    <h1>ГАЙД ПО АРТЕФАКТНОМУ ОРУЖИЮ</h1>
+    <p>Уникальная система оружия на вашем Minecraft сервере</p>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <h2>Разделы</h2>
+
+      <button class="tab-button active" onclick="openTab('artifact')">
+        ⚔ Артефактное оружие
+      </button>
+
+      <button class="tab-button" onclick="openTab('mechanics')">
+        ⚙ Механики
+      </button>
+
+      <button class="tab-button" onclick="openTab('magic')">
+        ✨ Магия
+      </button>
+
+      <button class="tab-button" onclick="openTab('npc')">
+        🧙 НПС
+      </button>
+
+      <button class="tab-button" onclick="openTab('leveling')">
+        📈 Прокачка
+      </button>
+
+      <button class="tab-button" onclick="openTab('upgrade')">
+        🛡 Улучшения
+      </button>
+
+      <button class="tab-button" onclick="openTab('future')">
+        🔒 Скоро...
+      </button>
+    </aside>
+
+    <main class="content">
+      <section id="artifact" class="tab-content active">
+        <div class="hero">
+          <img src="https://play.logonik.ru:8880/pictures_for_guides/artifact_1.png" alt="Артефактное оружие">
+
+          <div class="hero-text">
+            <h2>Артефактное оружие</h2>
+            <p>
+              В старых свитках сказано: магия боится стали. Но что, если сталь сама станет магией?
+              Вы привыкли, что артефакты — это амулеты или кольца, которые пылятся в сумке. Забудьте.
+              Настоящий воин носит артефакт на поясе или в руке.
+            </p>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Что такое артефакт?</h3>
+          <p>
+            Артефакт — это категория предметов, где базовая форма оружия
+            (кинжал, меч, топор или молот) становится носителем уникальной силы.
+            В отличие от обычных зачарований, артефактное оружие имеет способности
+            от 1 до 5 уровня.
+            <br><br>
+            Способности бывают:
+            <br>• Активные — работают при ПКМ или Shift + ПКМ.
+            <br>• Пассивные — срабатывают при ударе или по области.
+            <br><br>
+            Такое оружие кардинально меняет весь игровой процесс.
+            Комбинируйте разные типы артефактов, чтобы стать непобедимым воином.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Как получить?</h3>
+          <p>
+            Артефакты можно получить двумя способами:
+            <br><br>
+            ⚔ Убийство боссов
+            <br>
+            🛠 Крафт на верстаке
+            <br><br>
+            Некоторые артефакты доступны уже на ранней стадии выживания,
+            а самые редкие добываются только с опаснейших существ.
+          </p>
+        </div>
+
+        <div class="craft-section">
+          <div class="craft-box">
+            <img src="https://play.logonik.ru:8880/pictures_for_guides/artifact_2.png" alt="Крафт артефакта">
+            <h4>Пример крафта</h4>
+            <p>
+              Один из стартовых артефактов.
+              Имеет простой рецепт и отлично подходит для начала выживания.
+            </p>
+          </div>
+
+          <div class="craft-box">
+            <img src="https://play.logonik.ru:8880/pictures_for_guides/artifact_1.png" alt="Артефакт в руке">
+            <h4>Боевые способности</h4>
+            <p>
+              Даёт бонус +1 к урону и пассивную способность:
+              поджигание врагов при ударе.
+            </p>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top: 28px;">
+          <h3>Финал</h3>
+          <p>
+            И это лишь один из немногих артефактов, доступных на проекте.
+            Исследуйте рецепты, охотьтесь на боссов и станьте первым обладателем
+            легендарного оружия.
+            <br><br>
+            Мир магии ждёт сильнейших.
+          </p>
+        </div>
+      </section>
+
+      <section id="mechanics" class="tab-content">
+        <div class="hero">
+          <img src="https://play.logonik.ru:8880/pictures_for_guides/mehanici_artifact.png" alt="Механики">
+
+          <div class="hero-text">
+            <h2>Механики сервера</h2>
+            <p>
+              Ванильный Minecraft — лишь начало. Настоящая игра начинается здесь:
+              квесты, магия, артефакты, NPC, данжи и кастомные боссы.
+            </p>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Что вас ждёт?</h3>
+          <p>
+            • Живой спавн с NPC
+            <br>• Квесты и сюжет
+            <br>• Артефакты с уникальными способностями
+            <br>• Магия через свитки
+            <br>• Данжи и боссы
+            <br>• Система прокачки
+            <br><br>
+            Этот сервер полностью меняет привычный геймплей Minecraft.
+          </p>
+        </div>
+      </section>
+
+      <section id="magic" class="tab-content">
+        <div class="hero">
+          <img src="https://play.logonik.ru:8880/pictures_for_guides/svitok.png" alt="Свиток магии">
+
+          <div class="hero-text">
+            <h2>Магия через свитки</h2>
+            <p>
+              Настоящая магия рождается не в пальцах, а на кончике пера.
+              Свитки позволяют переписывать законы реальности.
+            </p>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Школы магии</h3>
+          <p>
+            Основные стихии:
+            <br><br>
+            🔥 Огонь
+            <br>💧 Вода
+            <br>🌍 Земля
+            <br>💨 Воздух
+            <br><br>
+            Каждое заклинание имеет собственный кулдаун и уникальный эффект.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Уровни магии</h3>
+          <p>
+            Уровень 1 — базовые заклинания.
+            <br>Уровень 2 — боевые способности.
+            <br>Уровень 3 — магия, меняющая исход битвы.
+            <br><br>
+            Новые уровни открываются через задания Мага.
+          </p>
+        </div>
+      </section>
+
+      <section id="npc" class="tab-content">
+        <div class="card">
+          <h3>НПС и квесты</h3>
+          <p>
+            NPC на сервере — живые персонажи.
+            Они выдают задания, открывают механики и создают атмосферу.
+            <br><br>
+            Категории NPC:
+            <br>• Квестовые
+            <br>• Торговые
+            <br>• Функциональные
+            <br>• Атмосферные
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Примеры NPC</h3>
+          <p>
+            Маг, Паладин, Рыбак, Воин, Бармен, Гадалка,
+            Глава Воинов и многие другие.
+          </p>
+        </div>
+      </section>
+
+      <section id="leveling" class="tab-content">
+        <div class="card">
+          <h3>Прокачка</h3>
+          <p>
+            Система прокачки пока находится в разработке.
+            <br><br>
+            Команда открытия меню:
+            <br><br>
+            <b>/g</b>
+          </p>
+        </div>
+      </section>
+
+      <section id="upgrade" class="tab-content">
+        <div class="card">
+          <h3>Улучшение оружия и брони</h3>
+          <p>
+            Алмаз — это только начало пути.
+            Улучшайте экипировку у кузнеца,
+            используя специальные ресурсы.
+            <br><br>
+            Система находится в разработке.
+          </p>
+        </div>
+      </section>
+
+      <section id="future" class="tab-content">
+        <div class="card">
+          <h3>В разработке</h3>
+          <p>
+            Данный раздел находится в активной разработке.
+            <br><br>
+            Совсем скоро здесь появятся новые механики,
+            боссы, данжи и дополнительные системы сервера.
+          </p>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <footer>
+    Minecraft Server Guide • Artifact System
+  </footer>
+
+  <script>
+    function openTab(tabId) {
+      document.querySelectorAll('.tab-content').forEach(tab => {
+        tab.classList.remove('active');
+      });
+
+      document.querySelectorAll('.tab-button').forEach(button => {
+        button.classList.remove('active');
+      });
+
+      document.getElementById(tabId).classList.add('active');
+      event.currentTarget.classList.add('active');
+    }
+  </script>
+</body>
+</html>
