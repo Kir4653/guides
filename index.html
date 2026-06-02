@@ -1,90 +1,32 @@
 <!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Гайды WhiteHell — WhiteHell</title><style>
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap');
 :root{
-  --bg:#070910;
-  --bg2:#0d111c;
-  --panel:rgba(16,21,34,.74);
-  --panel-solid:#111725;
-  --panel2:rgba(255,255,255,.055);
-  --line:rgba(255,255,255,.10);
-  --line2:rgba(255,255,255,.16);
-  --text:#f5f7fb;
-  --muted:#9ea8bb;
-  --soft:#cbd3e3;
-  --accent:#7bdcff;
-  --accent2:#8b5cf6;
-  --gold:#ffd166;
-  --green:#8cffb5;
-  --red:#ff7b93;
-  --shadow:0 24px 80px rgba(0,0,0,.42);
-  --r:24px;
+  --bg:#070910;--bg2:#0b0f18;--panel:rgba(14,18,29,.72);--panel2:rgba(255,255,255,.055);--solid:#111827;
+  --line:rgba(255,255,255,.10);--line2:rgba(255,255,255,.18);--text:#f6f7fb;--muted:#9aa6ba;--soft:#cbd4e6;
+  --accent:#7bdcff;--accent2:#8b5cf6;--gold:#ffd166;--green:#8cffb5;--red:#ff7b93;--r:24px;--shadow:0 22px 70px rgba(0,0,0,.40)
 }
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-height:100vh;color:var(--text);font-family:Manrope,Inter,Arial,sans-serif;line-height:1.68;background:radial-gradient(820px 460px at 82% -8%,rgba(123,220,255,.18),transparent 60%),radial-gradient(700px 420px at 5% 0,rgba(139,92,246,.18),transparent 58%),linear-gradient(180deg,var(--bg),var(--bg2));overflow-x:hidden}body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.25;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:48px 48px;mask-image:linear-gradient(to bottom,#000,transparent 75%)}a{color:inherit}.layout{width:min(1320px,100%);margin:0 auto;display:grid;grid-template-columns:270px minmax(0,1fr);gap:24px;padding:24px 18px 70px;position:relative}.side{position:sticky;top:18px;height:calc(100vh - 36px);align-self:start;border:1px solid var(--line);border-radius:28px;background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.035));backdrop-filter:blur(18px);box-shadow:var(--shadow);padding:18px;overflow:auto}.brand{display:flex;align-items:center;gap:12px;text-decoration:none;margin-bottom:16px}.logo{width:42px;height:42px;border-radius:14px;background:linear-gradient(135deg,var(--accent),var(--accent2));box-shadow:0 12px 30px rgba(123,220,255,.18)}.brand b{font-size:18px;letter-spacing:-.03em}.brand span{display:block;color:var(--muted);font-size:12px;margin-top:-2px}.menu{display:grid;gap:7px}.menu a{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--soft);padding:10px 12px;border-radius:15px;border:1px solid transparent;font-weight:700;font-size:14px}.menu a:hover,.menu a.active{color:#fff;background:rgba(123,220,255,.09);border-color:rgba(123,220,255,.22)}.main{min-width:0}.mobile-nav{display:none;margin-bottom:14px}.mobile-nav details{border:1px solid var(--line);border-radius:20px;background:rgba(255,255,255,.06);padding:12px 14px}.mobile-nav summary{font-weight:800;cursor:pointer}.mobile-nav .menu{margin-top:10px}.hero{position:relative;overflow:hidden;border:1px solid var(--line);border-radius:34px;background:linear-gradient(135deg,rgba(255,255,255,.115),rgba(255,255,255,.035)),var(--panel);box-shadow:var(--shadow);backdrop-filter:blur(18px);padding:38px 38px 34px}.hero:before{content:"WHITEHELL";position:absolute;right:-28px;top:-18px;font-size:90px;font-weight:900;letter-spacing:.08em;color:rgba(255,255,255,.035);line-height:1;pointer-events:none}.hero:after{content:"";position:absolute;right:-100px;bottom:-170px;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(123,220,255,.22),transparent 64%)}.eyebrow{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.055);color:var(--soft);font-size:13px;font-weight:800;margin-bottom:14px}.hero h1{font-size:clamp(36px,6vw,68px);line-height:.96;margin:0 0 16px;letter-spacing:-.06em;font-weight:900;max-width:860px}.lead{font-size:18px;color:var(--soft);max-width:760px;margin:0}.content{margin-top:18px;border:1px solid var(--line);border-radius:28px;background:rgba(11,15,24,.56);backdrop-filter:blur(14px);box-shadow:0 18px 55px rgba(0,0,0,.24);padding:8px 28px 30px}h2{font-size:clamp(23px,3vw,34px);line-height:1.14;margin:36px 0 15px;letter-spacing:-.04em;font-weight:900}h2:after{content:"";display:block;width:48px;height:3px;border-radius:99px;margin-top:10px;background:linear-gradient(90deg,var(--accent),var(--accent2))}h3{font-size:21px;line-height:1.24;margin:20px 0 10px;letter-spacing:-.025em}p{margin:10px 0 14px}.muted{color:var(--muted)}strong,b{color:#fff}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}.card{position:relative;background:linear-gradient(180deg,rgba(255,255,255,.075),rgba(255,255,255,.035));border:1px solid var(--line);border-radius:22px;padding:19px;box-shadow:0 14px 40px rgba(0,0,0,.20);overflow:hidden}.card:before{content:"";position:absolute;inset:0 0 auto 0;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.35),transparent)}.card:hover{border-color:var(--line2);transform:translateY(-2px);transition:.18s ease}.btn{display:inline-flex;align-items:center;gap:7px;text-decoration:none;color:var(--text);background:rgba(255,255,255,.06);border:1px solid var(--line);border-radius:999px;padding:9px 14px;font-weight:800;font-size:14px}.btn:hover{border-color:rgba(123,220,255,.55);background:rgba(123,220,255,.10)}.note,.warn,.ok{margin:18px 0;border:1px solid var(--line);border-radius:19px;padding:15px 17px;background:rgba(255,255,255,.055);box-shadow:0 10px 32px rgba(0,0,0,.16)}.note{border-left:3px solid var(--accent)}.warn{border-left:3px solid var(--red)}.ok{border-left:3px solid var(--green)}.cmd,.kbd{font-family:'JetBrains Mono',Consolas,monospace;background:rgba(0,0,0,.40);border:1px solid rgba(255,255,255,.14);border-radius:9px;padding:3px 7px;color:#fff0a6;white-space:nowrap;font-size:.93em}.table{width:100%;border-collapse:separate;border-spacing:0;background:rgba(255,255,255,.045);border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:0 14px 42px rgba(0,0,0,.18)}.table th,.table td{border-bottom:1px solid var(--line);padding:13px 14px;vertical-align:top}.table tr:last-child td{border-bottom:0}.table th{background:rgba(255,255,255,.075);text-align:left;color:#fff;font-size:13px;text-transform:uppercase;letter-spacing:.04em}.tag{display:inline-flex;border:1px solid var(--line);background:rgba(255,255,255,.055);border-radius:999px;padding:4px 10px;color:#dce5f6;font-size:13px;font-weight:800}figure{margin:20px 0;background:rgba(255,255,255,.05);border:1px solid var(--line);border-radius:24px;overflow:hidden;box-shadow:0 14px 42px rgba(0,0,0,.2)}figure img{width:100%;display:block;min-height:190px;object-fit:cover;background:linear-gradient(135deg,rgba(123,220,255,.08),rgba(139,92,246,.08)),#0b0f18}figcaption{padding:11px 15px;color:var(--muted);font-size:14px}.faq-block{margin-top:42px;padding-top:8px}.faq-block details,.faq details{background:rgba(255,255,255,.055);border:1px solid var(--line);border-radius:18px;margin:10px 0;padding:14px 16px}.faq-block details[open],.faq details[open]{border-color:rgba(123,220,255,.35);background:rgba(123,220,255,.07)}.faq-block summary,.faq summary{font-weight:850;cursor:pointer;letter-spacing:-.015em}.footer{margin:34px 0 0;color:var(--muted);font-size:14px;text-align:center}ul,ol{padding-left:22px}li{margin:5px 0}@media(max-width:920px){.layout{display:block;padding:14px 12px 46px}.side{display:none}.mobile-nav{display:block}.hero{padding:26px 20px;border-radius:24px}.hero:before{font-size:52px;right:-18px;top:-8px}.content{padding:2px 16px 24px;border-radius:22px}.table{font-size:14px}.table th,.table td{padding:10px}.grid{grid-template-columns:1fr}}
+</style>
+<style id="whitehell-remote-assets">
+:root{--guide-bg-image:url('https://play.logonik.ru:8880/picture_for_guides/background.png')}
 body{
-  margin:0;
-  min-height:100vh;
-  color:var(--text);
-  font-family:Inter,Manrope,Arial,Helvetica,sans-serif;
-  line-height:1.7;
-  background:
-    radial-gradient(900px 520px at 78% -10%,rgba(123,220,255,.18),transparent 62%),
-    radial-gradient(760px 460px at 8% 8%,rgba(139,92,246,.18),transparent 58%),
-    linear-gradient(180deg,var(--bg),var(--bg2) 55%,#080a11);
-  overflow-x:hidden;
+  background-image:
+    linear-gradient(180deg,rgba(7,9,16,.88),rgba(11,15,24,.95)),
+    radial-gradient(820px 460px at 82% -8%,rgba(123,220,255,.18),transparent 60%),
+    radial-gradient(700px 420px at 5% 0,rgba(139,92,246,.18),transparent 58%),
+    var(--guide-bg-image) !important;
+  background-size:cover,820px 460px,700px 420px,cover !important;
+  background-position:center,82% -8%,5% 0,center !important;
+  background-attachment:fixed,fixed,fixed,fixed !important;
 }
-body:before{
-  content:"";
-  position:fixed;inset:0;pointer-events:none;opacity:.34;
-  background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);
-  background-size:44px 44px;
-  mask-image:linear-gradient(to bottom,#000,transparent 78%);
-}
-a{color:inherit}.wrap{max-width:1180px;margin:0 auto;padding:26px 18px 70px;position:relative}.hero{
-  position:relative;
-  padding:34px 34px 28px;
-  border:1px solid var(--line);
-  border-radius:32px;
-  background:linear-gradient(135deg,rgba(255,255,255,.12),rgba(255,255,255,.035)),var(--panel);
-  box-shadow:var(--shadow);
-  backdrop-filter:blur(18px);
-  overflow:hidden;
-}
-.hero:before{
-  content:"WHITEHELL";
-  position:absolute;right:-22px;top:-18px;
-  font-size:92px;font-weight:900;letter-spacing:.06em;
-  color:rgba(255,255,255,.035);line-height:1;pointer-events:none;
-}
-.hero:after{
-  content:"";position:absolute;inset:auto -80px -150px auto;width:330px;height:330px;border-radius:50%;
-  background:radial-gradient(circle,rgba(123,220,255,.22),transparent 64%);pointer-events:none;
-}
-h1{font-size:clamp(38px,7vw,74px);line-height:.96;margin:0 0 14px;letter-spacing:-.055em;font-weight:900;max-width:860px}
-h2{font-size:clamp(24px,3vw,36px);line-height:1.15;margin:42px 0 16px;letter-spacing:-.035em;border:0;padding:0;font-weight:850}
-h2:after{content:"";display:block;width:52px;height:3px;border-radius:99px;margin-top:12px;background:linear-gradient(90deg,var(--accent),var(--accent2))}
-h3{font-size:21px;line-height:1.25;margin:20px 0 10px;letter-spacing:-.02em}.lead{font-size:18px;color:var(--soft);max-width:780px;margin:0 0 18px}.nav{display:flex;flex-wrap:wrap;gap:9px;margin:24px 0 0;position:relative;z-index:2}.nav a,.btn{
-  display:inline-flex;align-items:center;gap:7px;text-decoration:none;color:var(--text);
-  background:rgba(255,255,255,.06);border:1px solid var(--line);
-  border-radius:999px;padding:9px 14px;font-weight:700;font-size:14px;
-  transition:transform .18s ease,border-color .18s ease,background .18s ease,box-shadow .18s ease;
-}
-.nav a:hover,.btn:hover{transform:translateY(-1px);border-color:rgba(123,220,255,.55);background:rgba(123,220,255,.10);box-shadow:0 10px 30px rgba(123,220,255,.08)}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(245px,1fr));gap:14px}.card{
-  position:relative;background:linear-gradient(180deg,rgba(255,255,255,.075),rgba(255,255,255,.035));
-  border:1px solid var(--line);border-radius:24px;padding:20px;box-shadow:0 14px 42px rgba(0,0,0,.22);overflow:hidden;
-}
-.card:before{content:"";position:absolute;inset:0 0 auto 0;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.35),transparent)}
-.card:hover{border-color:var(--line2);transform:translateY(-2px);transition:.18s ease}.note,.warn,.ok{
-  margin:18px 0;border:1px solid var(--line);border-radius:20px;padding:15px 17px;background:rgba(255,255,255,.055);box-shadow:0 10px 32px rgba(0,0,0,.16)
-}
-.note{border-left:3px solid var(--accent)}.warn{border-left:3px solid var(--red)}.ok{border-left:3px solid var(--green)}.cmd,.kbd{
-  font-family:"JetBrains Mono",Consolas,monospace;background:rgba(0,0,0,.38);border:1px solid rgba(255,255,255,.13);border-radius:9px;padding:3px 7px;color:#fff0a6;white-space:nowrap;font-size:.94em
-}
-.table{width:100%;border-collapse:separate;border-spacing:0;background:rgba(255,255,255,.045);border:1px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:0 14px 42px rgba(0,0,0,.18)}
-.table th,.table td{border-bottom:1px solid var(--line);padding:14px 15px;vertical-align:top}.table tr:last-child td{border-bottom:0}.table th{background:rgba(255,255,255,.075);text-align:left;color:#fff;font-size:14px;text-transform:uppercase;letter-spacing:.04em}.muted{color:var(--muted)}
-figure{margin:20px 0;background:rgba(255,255,255,.05);border:1px solid var(--line);border-radius:26px;overflow:hidden;box-shadow:0 14px 42px rgba(0,0,0,.2)}
-figure img{width:100%;display:block;min-height:180px;object-fit:cover;background:linear-gradient(135deg,rgba(123,220,255,.08),rgba(139,92,246,.08)),#0b0f18}figcaption{padding:11px 15px;color:var(--muted);font-size:14px}.tag{display:inline-flex;border:1px solid var(--line);background:rgba(255,255,255,.055);border-radius:999px;padding:4px 10px;color:#dce5f6;font-size:13px;font-weight:700}.footer{margin-top:46px;color:var(--muted);font-size:14px;text-align:center}.faq details{background:rgba(255,255,255,.055);border:1px solid var(--line);border-radius:20px;margin:10px 0;padding:15px 17px}.faq details[open]{border-color:rgba(123,220,255,.35);background:rgba(123,220,255,.07)}.faq summary{font-weight:800;cursor:pointer;letter-spacing:-.01em}
-ul,ol{padding-left:22px}li{margin:5px 0}p{margin:10px 0 14px}strong,b{color:#fff}@media(max-width:720px){.wrap{padding:14px 12px 46px}.hero{padding:24px 18px;border-radius:24px}.hero:before{font-size:54px;right:-18px;top:-8px}.nav a,.btn{font-size:13px;padding:8px 11px}.table{font-size:14px}.table th,.table td{padding:10px}.grid{grid-template-columns:1fr}}
-</style></head><body><main class="wrap"><section class="hero"><h1>Гайды WhiteHell</h1><p class="lead">Минималистичная база знаний по рабочим механикам сервера.</p><div class="nav">
-<a href="index.html">⚙ Механики</a><a href="start.html">🧭 Старт</a><a href="quests.html">📜 Квесты</a><a href="magic.html">✨ Магия</a><a href="leveling.html">📈 Прокачка</a><a href="artifact.html">⚔ Артефакты</a><a href="commands.html">⌨ Команды</a><a href="faq.html">❓ FAQ</a><a href="worlds.html">🌍 Миры</a><a href="spawners.html">🧟 Спавнеры</a>
-</div></section><h2>Готовые разделы</h2><div class="grid"><div class="card"><h3><a class="btn" href="start.html">Первый вход</a></h3><p class="muted">Открыть раздел гайда.</p></div><div class="card"><h3><a class="btn" href="commands.html">Команды</a></h3><p class="muted">Открыть раздел гайда.</p></div><div class="card"><h3><a class="btn" href="faq.html">FAQ</a></h3><p class="muted">Открыть раздел гайда.</p></div><div class="card"><h3><a class="btn" href="quests.html">Квесты</a></h3><p class="muted">Открыть раздел гайда.</p></div><div class="card"><h3><a class="btn" href="magic.html">Магия</a></h3><p class="muted">Открыть раздел гайда.</p></div><div class="card"><h3><a class="btn" href="leveling.html">Прокачка</a></h3><p class="muted">Открыть раздел гайда.</p></div><div class="card"><h3><a class="btn" href="artifact.html">Артефакты</a></h3><p class="muted">Открыть раздел гайда.</p></div><div class="card"><h3><a class="btn" href="archer.html">Лучник</a></h3><p class="muted">Открыть раздел гайда.</p></div><div class="card"><h3><a class="btn" href="summoner.html">Призыватель</a></h3><p class="muted">Открыть раздел гайда.</p></div><div class="card"><h3><a class="btn" href="spawners.html">Спавнеры</a></h3><p class="muted">Открыть раздел гайда.</p></div><div class="card"><h3><a class="btn" href="worlds.html">Миры</a></h3><p class="muted">Открыть раздел гайда.</p></div><div class="card"><h3><a class="btn" href="rewards.html">Награды</a></h3><p class="muted">Открыть раздел гайда.</p></div><div class="card"><h3><a class="btn" href="economy.html">Экономика</a></h3><p class="muted">Открыть раздел гайда.</p></div></div><div class="warn"><b>Кланы не включены:</b> механика находится в разработке, поэтому её лучше не показывать игрокам.</div><div class="footer">WhiteHell Guides • страница подготовлена по рабочим файлам сервера</div></main></body></html>
+.hero{background:linear-gradient(135deg,rgba(255,255,255,.13),rgba(255,255,255,.045)),rgba(10,13,22,.68) !important}
+.content,.side,.mobile-nav details{background-color:rgba(10,13,22,.68) !important}
+figure img{background:linear-gradient(135deg,rgba(123,220,255,.08),rgba(139,92,246,.08)),#0b0f18}
+</style>
+</head><body><div class="layout"><aside class="side"><a class="brand" href="index.html"><span class="logo"></span><span><b>WhiteHell</b><span>гайды выживания</span></span></a><nav class="menu"><a class="active" href="index.html"><span>⌂</span>Главная</a><a class="" href="start.html"><span>🧭</span>Старт</a><a class="" href="commands.html"><span>⌨</span>Команды</a><a class="" href="faq.html"><span>?</span>FAQ</a><a class="" href="quests.html"><span>📜</span>Квесты</a><a class="" href="magic.html"><span>✨</span>Магия</a><a class="" href="leveling.html"><span>📈</span>Прокачка</a><a class="" href="artifact.html"><span>⚔</span>Артефакты</a><a class="" href="archer.html"><span>🏹</span>Лучник</a><a class="" href="summoner.html"><span>☠</span>Призыватель</a><a class="" href="spawners.html"><span>🧟</span>Спавнеры</a><a class="" href="worlds.html"><span>🌍</span>Миры</a><a class="" href="rewards.html"><span>🎁</span>Награды</a><a class="" href="economy.html"><span>◈</span>Экономика</a></nav></aside><main class="main"><div class="mobile-nav"><details><summary>☰ Навигация по гайдам</summary><nav class="menu"><a class="active" href="index.html"><span>⌂</span>Главная</a><a class="" href="start.html"><span>🧭</span>Старт</a><a class="" href="commands.html"><span>⌨</span>Команды</a><a class="" href="faq.html"><span>?</span>FAQ</a><a class="" href="quests.html"><span>📜</span>Квесты</a><a class="" href="magic.html"><span>✨</span>Магия</a><a class="" href="leveling.html"><span>📈</span>Прокачка</a><a class="" href="artifact.html"><span>⚔</span>Артефакты</a><a class="" href="archer.html"><span>🏹</span>Лучник</a><a class="" href="summoner.html"><span>☠</span>Призыватель</a><a class="" href="spawners.html"><span>🧟</span>Спавнеры</a><a class="" href="worlds.html"><span>🌍</span>Миры</a><a class="" href="rewards.html"><span>🎁</span>Награды</a><a class="" href="economy.html"><span>◈</span>Экономика</a></nav></details></div><section class="hero"><div class="eyebrow">WhiteHell Guides</div><h1>Гайды WhiteHell</h1><p class="lead">Минималистичная база знаний по рабочим механикам сервера.</p></section><article class="content"><h2>Готовые разделы</h2><div class="grid"><div class="card"><h3><a class="btn" href="start.html">Первый вход</a></h3><p class="muted">Открыть раздел гайда.</p></div><div class="card"><h3><a class="btn" href="commands.html">Команды</a></h3><p class="muted">Открыть раздел гайда.</p></div><div class="card"><h3><a class="btn" href="faq.html">FAQ</a></h3><p class="muted">Открыть раздел гайда.</p></div><div class="card"><h3><a class="btn" href="quests.html">Квесты</a></h3><p class="muted">Открыть раздел гайда.</p></div><div class="card"><h3><a class="btn" href="magic.html">Магия</a></h3><p class="muted">Открыть раздел гайда.</p></div><div class="card"><h3><a class="btn" href="leveling.html">Прокачка</a></h3><p class="muted">Открыть раздел гайда.</p></div><div class="card"><h3><a class="btn" href="artifact.html">Артефакты</a></h3><p class="muted">Открыть раздел гайда.</p></div><div class="card"><h3><a class="btn" href="archer.html">Лучник</a></h3><p class="muted">Открыть раздел гайда.</p></div><div class="card"><h3><a class="btn" href="summoner.html">Призыватель</a></h3><p class="muted">Открыть раздел гайда.</p></div><div class="card"><h3><a class="btn" href="spawners.html">Спавнеры</a></h3><p class="muted">Открыть раздел гайда.</p></div><div class="card"><h3><a class="btn" href="worlds.html">Миры</a></h3><p class="muted">Открыть раздел гайда.</p></div><div class="card"><h3><a class="btn" href="rewards.html">Награды</a></h3><p class="muted">Открыть раздел гайда.</p></div><div class="card"><h3><a class="btn" href="economy.html">Экономика</a></h3><p class="muted">Открыть раздел гайда.</p></div></div><div class="warn"><b>Кланы не включены:</b> механика находится в разработке, поэтому её лучше не показывать игрокам.</div>
+<section class="faq-block"><h2>Частые вопросы</h2>
+<details><summary>Какие команды мне точно нужны?</summary><p>Откройте страницу <a href="commands.html">Команды</a>. Там команды разделены по темам: старт, магия, квесты, награды и полезные действия.</p></details>
+<details><summary>Где искать подробности по механике?</summary><p>Используйте навигацию слева. Если вы на телефоне, нажмите «☰ Навигация по гайдам» над заголовком страницы.</p></details>
+<details><summary>Почему у меня что-то не работает?</summary><p>Чаще всего механика требует квест, предмет, выбранный режим или изученную способность. Проверьте описание раздела и страницу FAQ.</p></details>
+<details><summary>Куда смотреть новичку?</summary><p>Начните со страницы <a href="start.html">Старт</a>, потом откройте <a href="quests.html">Квесты</a> и <a href="commands.html">Команды</a>.</p></details>
+</section><div class="footer">WhiteHell Guides • страница подготовлена по рабочим файлам сервера</div></article></main></div></body></html>
