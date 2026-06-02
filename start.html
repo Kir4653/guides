@@ -1,5 +1,91 @@
 <!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Первый вход и старт — WhiteHell</title><style>
-:root{--bg:#0f1117;--panel:#171a23;--panel2:#202431;--text:#f1f3f7;--muted:#aeb6c6;--accent:#f5b942;--green:#69db7c;--red:#ff6b6b;--blue:#74c0fc;--purple:#b197fc}*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top,#1d2230,#0f1117 55%);color:var(--text);font-family:Arial,Helvetica,sans-serif;line-height:1.65}.wrap{max-width:1120px;margin:0 auto;padding:28px 18px 60px}.hero{padding:32px;border:1px solid #2b3142;border-radius:22px;background:linear-gradient(135deg,rgba(245,185,66,.16),rgba(116,192,252,.08)),var(--panel);box-shadow:0 18px 60px rgba(0,0,0,.35)}h1{font-size:42px;margin:0 0 10px}h2{font-size:28px;margin-top:34px;border-left:5px solid var(--accent);padding-left:12px}h3{font-size:21px;margin-top:24px}.lead{font-size:18px;color:#d9deea}.nav{display:flex;flex-wrap:wrap;gap:10px;margin:20px 0}.nav a,.btn{display:inline-block;text-decoration:none;color:var(--text);background:var(--panel2);border:1px solid #333a4e;border-radius:12px;padding:9px 13px}.nav a:hover,.btn:hover{border-color:var(--accent)}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}.card{background:var(--panel);border:1px solid #2b3142;border-radius:18px;padding:18px}.note{border-left:4px solid var(--blue);background:rgba(116,192,252,.08);padding:13px 15px;border-radius:10px}.warn{border-left:4px solid var(--red);background:rgba(255,107,107,.08);padding:13px 15px;border-radius:10px}.ok{border-left:4px solid var(--green);background:rgba(105,219,124,.08);padding:13px 15px;border-radius:10px}.cmd{font-family:Consolas,monospace;background:#0a0c11;border:1px solid #30364a;border-radius:10px;padding:3px 7px;color:#ffe08a;white-space:nowrap}.table{width:100%;border-collapse:collapse;background:var(--panel);border-radius:16px;overflow:hidden}.table th,.table td{border-bottom:1px solid #2b3142;padding:12px;vertical-align:top}.table th{background:#202431;text-align:left}.muted{color:var(--muted)}figure{margin:18px 0;background:var(--panel);border:1px solid #2b3142;border-radius:18px;overflow:hidden}figure img{width:100%;display:block;min-height:120px;object-fit:cover;background:#0b0d12}figcaption{padding:10px 14px;color:var(--muted);font-size:14px}.tag{display:inline-block;border:1px solid #394057;background:#1d2230;border-radius:999px;padding:3px 9px;color:#d8deeb;font-size:13px}.footer{margin-top:46px;color:var(--muted);font-size:14px}.faq details{background:var(--panel);border:1px solid #2b3142;border-radius:14px;margin:10px 0;padding:14px}.faq summary{font-weight:700;cursor:pointer}.kbd{font-family:Consolas,monospace;background:#232838;border-radius:7px;padding:2px 6px}</style></head><body><main class="wrap"><section class="hero"><h1>Первый вход и старт</h1><p class="lead">Что делать после входа, как выбрать режим и куда идти в первые минуты игры.</p><div class="nav">
+:root{
+  --bg:#070910;
+  --bg2:#0d111c;
+  --panel:rgba(16,21,34,.74);
+  --panel-solid:#111725;
+  --panel2:rgba(255,255,255,.055);
+  --line:rgba(255,255,255,.10);
+  --line2:rgba(255,255,255,.16);
+  --text:#f5f7fb;
+  --muted:#9ea8bb;
+  --soft:#cbd3e3;
+  --accent:#7bdcff;
+  --accent2:#8b5cf6;
+  --gold:#ffd166;
+  --green:#8cffb5;
+  --red:#ff7b93;
+  --shadow:0 24px 80px rgba(0,0,0,.42);
+  --r:24px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  min-height:100vh;
+  color:var(--text);
+  font-family:Inter,Manrope,Arial,Helvetica,sans-serif;
+  line-height:1.7;
+  background:
+    radial-gradient(900px 520px at 78% -10%,rgba(123,220,255,.18),transparent 62%),
+    radial-gradient(760px 460px at 8% 8%,rgba(139,92,246,.18),transparent 58%),
+    linear-gradient(180deg,var(--bg),var(--bg2) 55%,#080a11);
+  overflow-x:hidden;
+}
+body:before{
+  content:"";
+  position:fixed;inset:0;pointer-events:none;opacity:.34;
+  background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);
+  background-size:44px 44px;
+  mask-image:linear-gradient(to bottom,#000,transparent 78%);
+}
+a{color:inherit}.wrap{max-width:1180px;margin:0 auto;padding:26px 18px 70px;position:relative}.hero{
+  position:relative;
+  padding:34px 34px 28px;
+  border:1px solid var(--line);
+  border-radius:32px;
+  background:linear-gradient(135deg,rgba(255,255,255,.12),rgba(255,255,255,.035)),var(--panel);
+  box-shadow:var(--shadow);
+  backdrop-filter:blur(18px);
+  overflow:hidden;
+}
+.hero:before{
+  content:"WHITEHELL";
+  position:absolute;right:-22px;top:-18px;
+  font-size:92px;font-weight:900;letter-spacing:.06em;
+  color:rgba(255,255,255,.035);line-height:1;pointer-events:none;
+}
+.hero:after{
+  content:"";position:absolute;inset:auto -80px -150px auto;width:330px;height:330px;border-radius:50%;
+  background:radial-gradient(circle,rgba(123,220,255,.22),transparent 64%);pointer-events:none;
+}
+h1{font-size:clamp(38px,7vw,74px);line-height:.96;margin:0 0 14px;letter-spacing:-.055em;font-weight:900;max-width:860px}
+h2{font-size:clamp(24px,3vw,36px);line-height:1.15;margin:42px 0 16px;letter-spacing:-.035em;border:0;padding:0;font-weight:850}
+h2:after{content:"";display:block;width:52px;height:3px;border-radius:99px;margin-top:12px;background:linear-gradient(90deg,var(--accent),var(--accent2))}
+h3{font-size:21px;line-height:1.25;margin:20px 0 10px;letter-spacing:-.02em}.lead{font-size:18px;color:var(--soft);max-width:780px;margin:0 0 18px}.nav{display:flex;flex-wrap:wrap;gap:9px;margin:24px 0 0;position:relative;z-index:2}.nav a,.btn{
+  display:inline-flex;align-items:center;gap:7px;text-decoration:none;color:var(--text);
+  background:rgba(255,255,255,.06);border:1px solid var(--line);
+  border-radius:999px;padding:9px 14px;font-weight:700;font-size:14px;
+  transition:transform .18s ease,border-color .18s ease,background .18s ease,box-shadow .18s ease;
+}
+.nav a:hover,.btn:hover{transform:translateY(-1px);border-color:rgba(123,220,255,.55);background:rgba(123,220,255,.10);box-shadow:0 10px 30px rgba(123,220,255,.08)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(245px,1fr));gap:14px}.card{
+  position:relative;background:linear-gradient(180deg,rgba(255,255,255,.075),rgba(255,255,255,.035));
+  border:1px solid var(--line);border-radius:24px;padding:20px;box-shadow:0 14px 42px rgba(0,0,0,.22);overflow:hidden;
+}
+.card:before{content:"";position:absolute;inset:0 0 auto 0;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.35),transparent)}
+.card:hover{border-color:var(--line2);transform:translateY(-2px);transition:.18s ease}.note,.warn,.ok{
+  margin:18px 0;border:1px solid var(--line);border-radius:20px;padding:15px 17px;background:rgba(255,255,255,.055);box-shadow:0 10px 32px rgba(0,0,0,.16)
+}
+.note{border-left:3px solid var(--accent)}.warn{border-left:3px solid var(--red)}.ok{border-left:3px solid var(--green)}.cmd,.kbd{
+  font-family:"JetBrains Mono",Consolas,monospace;background:rgba(0,0,0,.38);border:1px solid rgba(255,255,255,.13);border-radius:9px;padding:3px 7px;color:#fff0a6;white-space:nowrap;font-size:.94em
+}
+.table{width:100%;border-collapse:separate;border-spacing:0;background:rgba(255,255,255,.045);border:1px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:0 14px 42px rgba(0,0,0,.18)}
+.table th,.table td{border-bottom:1px solid var(--line);padding:14px 15px;vertical-align:top}.table tr:last-child td{border-bottom:0}.table th{background:rgba(255,255,255,.075);text-align:left;color:#fff;font-size:14px;text-transform:uppercase;letter-spacing:.04em}.muted{color:var(--muted)}
+figure{margin:20px 0;background:rgba(255,255,255,.05);border:1px solid var(--line);border-radius:26px;overflow:hidden;box-shadow:0 14px 42px rgba(0,0,0,.2)}
+figure img{width:100%;display:block;min-height:180px;object-fit:cover;background:linear-gradient(135deg,rgba(123,220,255,.08),rgba(139,92,246,.08)),#0b0f18}figcaption{padding:11px 15px;color:var(--muted);font-size:14px}.tag{display:inline-flex;border:1px solid var(--line);background:rgba(255,255,255,.055);border-radius:999px;padding:4px 10px;color:#dce5f6;font-size:13px;font-weight:700}.footer{margin-top:46px;color:var(--muted);font-size:14px;text-align:center}.faq details{background:rgba(255,255,255,.055);border:1px solid var(--line);border-radius:20px;margin:10px 0;padding:15px 17px}.faq details[open]{border-color:rgba(123,220,255,.35);background:rgba(123,220,255,.07)}.faq summary{font-weight:800;cursor:pointer;letter-spacing:-.01em}
+ul,ol{padding-left:22px}li{margin:5px 0}p{margin:10px 0 14px}strong,b{color:#fff}@media(max-width:720px){.wrap{padding:14px 12px 46px}.hero{padding:24px 18px;border-radius:24px}.hero:before{font-size:54px;right:-18px;top:-8px}.nav a,.btn{font-size:13px;padding:8px 11px}.table{font-size:14px}.table th,.table td{padding:10px}.grid{grid-template-columns:1fr}}
+</style></head><body><main class="wrap"><section class="hero"><h1>Первый вход и старт</h1><p class="lead">Что делать после входа, как выбрать режим и куда идти в первые минуты игры.</p><div class="nav">
 <a href="index.html">⚙ Механики</a><a href="start.html">🧭 Старт</a><a href="quests.html">📜 Квесты</a><a href="magic.html">✨ Магия</a><a href="leveling.html">📈 Прокачка</a><a href="artifact.html">⚔ Артефакты</a><a href="commands.html">⌨ Команды</a><a href="faq.html">❓ FAQ</a><a href="worlds.html">🌍 Миры</a><a href="spawners.html">🧟 Спавнеры</a>
 </div></section>
 <h2>1. Вход на сервер</h2><p>После входа игрок попадает в зону ожидания. Это защита от ситуаций, когда ресурспак или серверные элементы ещё не успели нормально подготовиться.</p><div class="ok">На экране появится подсказка: введите <span class="cmd">/access</span>, чтобы начать играть.</div><h2>2. Выбор режима</h2><div class="grid"><div class="card"><h3>Казуал</h3><p>Режим с увеличенным запасом здоровья: 40 HP. Подходит игрокам, которые хотят спокойнее изучать сервер.</p></div><div class="card"><h3>Нормальный человек</h3><p>Обычное выживание без усиленного здоровья. Подходит для стандартного прохождения.</p></div></div><p>Режим сохраняется. Пока игрок не выбрал режим, меню выбора будет открываться снова.</p><h2>3. Главный спавн</h2><p>Команда <span class="cmd">/spawn</span> переносит на спавн обычного мира. Команда <span class="cmd">/back</span> возвращает обратно, если игрок находится рядом со спавном.</p><h2>4. Что делать дальше</h2><ol><li>Откройте меню гайдов через <span class="cmd">/guides_gui</span>.</li><li>Найдите NPC на спавне.</li><li>Возьмите первый квест через NPC или <span class="cmd">/quests_gui</span>.</li><li>Заберите ежедневную награду через <span class="cmd">/rewards_gui</span>.</li><li>Начните копить очки улучшения и изучать магию.</li></ol><figure><img src="images/spawn-overview.png" alt="Главный спавн"><figcaption>Скрин для вставки: общий вид спавна и места, куда попадает игрок.</figcaption></figure><div class="footer">WhiteHell Guides • страница подготовлена по рабочим файлам сервера</div></main></body></html>
